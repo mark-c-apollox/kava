@@ -105,5 +105,7 @@ jq '.app_state.earn.params.allowed_vaults =  [
 
 jq '.app_state.savings.params.supported_denoms = ["bkava-kavavaloper1ffv7nhd3z6sych2qpqkk03ec6hzkmufyz4scd0"]' $DATA/config/genesis.json | sponge $DATA/config/genesis.json
 
+jq '.consensus_params.block.max_gas = "20000000"' $DATA/config/genesis.json | sponge $DATA/config/genesis.json
+
 
 $BINARY config broadcast-mode sync
